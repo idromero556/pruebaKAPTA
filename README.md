@@ -11,15 +11,15 @@ Luego en la terminal se coloca python manage.py makemigrations.
 
 Luego en la terminal se coloca python manage.py migrate.
 
-Para correrlo se usa el comando python manage.py runserver.
+Para correrlo se usa el comando python manage.py runserver. (Deben estar en el archivo pruebaKAPTA)
 
-Para poblar la BD con la información de freedcamp, usar el link localhost/freedcamp/listarProyectos/
+Para poblar la BD con la información de freedcamp, usar el link localhost:8000/freedcamp/listarProyectos/
 
-y el link de las tareas(para cada id de proyecto): localhost/freedcamp/verListasTareas/<id_proyecto>/
+y el link de las tareas(para cada id de proyecto): localhost:8000/freedcamp/verListasTareas/<id_proyecto>/
 
 Es necesario crear las empresas directamente en la BD, pero los servicios y la asignación de los mercados a cada servicio pueden ser creados desde la aplicación.
 
-Para navegar la aplicación ingresar a: localhost/freedcamp/
+Para navegar la aplicación ingresar a: localhost:8000/freedcamp/
 
 
 
