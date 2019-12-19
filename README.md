@@ -17,7 +17,9 @@ Para poblar la BD con la información de freedcamp, usar el link localhost/freed
 
 y el link de las tareas(para cada id de proyecto): localhost/freedcamp/verListasTareas/<id_proyecto>/
 
-Luego ingresar a para navegar la aplicación: localhost/freedcamp/
+Es necesario crear las empresas directamente en la BD, pero los servicios y la asignación de los mercados a cada servicio pueden ser creados desde la aplicación.
+
+Para navegar la aplicación ingresar a: localhost/freedcamp/
 
 
 
