@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Crear tarea</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <br>
+        <div class="row">
+            <div class="col-sm-3" style="background-color:lavenderblush;"><h3>Crear tarea</h3></div>
+        </div>
+        <div class="row">
+            <form method="post" id="formTarea" action="{% url 'freedcamp:agregarTarea' pk=proyecto.pk %}" enctype="multipart/form-data" >
+                <div class="input-group">
+                    <span class="input-group-addon" style="width: 100px">Nombre</span>
+                    <input id="nombre" name="nombre" type="text" placeholder="Nombre" class="form-control" style="width: 190px">
+                </div>
+
+
+                <input id="send" name="send" type="submit" placeholder="Adicionar" /><br />
+                <a href="javascript:history.back()">Cancelar</a>
+            </form>
+        </div>
+</div>
+    <script>
+
+
+        $('form').submit(function (e) {
+            if ($('#nombre').val() == "") {
+                alert('Hay campos vacios');
+                e.preventDefault();
+            } else {
+            var formData = new FormData($('#formTarea')[0]);
+            $.ajax({
+                url: $(this).attr('action'),
+                type: $(this).attr('method'),
+                data: formData,
+                cache: false,
+                contentType: false,
+                processData: false,
+                success: function () {
+                    window.location = "{% url 'freedcamp:index' %}";
+                },
+            });
+            e.preventDefault();
+
+            };
+        });
+
+
+
+    </script>
+</body>
+</html>

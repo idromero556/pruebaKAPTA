@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Servicios de la Empresa</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+
+</head>
+<body>
+    <div class="container">
+        <br>
+        <a href="{% url 'freedcamp:index' %}">Regresar</a>
+        <br>
+        <div class="row">
+            <div class="col-sm-4" style="background-color:lavenderblush;"><h3>Servicios de la empresa</h3></div>
+        </div>
+        <div class="row" id="link">
+            <div class="col-sm-4" style="background-color:lavenderblush;"><a href="{% url 'freedcamp:crearServicioForm' pk=empresa.pk %}" ><h6>Crear nuevo servicio</h6></a></div>
+        </div>
+        <div class="row" id="listas">
+            <ul class="list-group"  style="width: 390px">
+                {% for i in servicios%}
+                <li class="list-group-item"><a href="{% url 'freedcamp:listarMercados' pk=i.id %}">{{i.nombre}}</a></li>
+                {% endfor %}
+            </ul>
+
+        </div>
+
+
+    </div>
+</body>
+</html>

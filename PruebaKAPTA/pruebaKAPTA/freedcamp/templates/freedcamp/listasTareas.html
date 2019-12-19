@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tareas del Proyecto</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+
+</head>
+<body>
+    <div class="container">
+        <br>
+        <a href="{% url 'freedcamp:index' %}">Regresar</a>
+        <br>
+        <div class="row">
+            <div class="col-sm-8" style="background-color:lavenderblush;"><h3>Tareas del Proyecto</h3></div>
+        </div>
+        <div class="row" id="listas">
+            <ul class="list-group"  style="width: 780px">
+                {% for i in listasTareas%}
+                <li class="list-group-item">{{i.name}} <h6>({{i.status}})</h6></li>
+                {% endfor %}
+            </ul>
+
+        </div>
+
+
+    </div>
+</body>
+</html>

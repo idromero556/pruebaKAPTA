@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<br lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Empresas</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script>
+
+        (function() {
+	        $.getJSON( "{% url 'freedcamp:isLogged' %}" ).done(function( data ) {
+                if (data.message =="no") {
+                    $("#login_user").show();
+                    $("#registro_usuario").show();
+                    $("#agregar_nuevo_evento").hide();
+                    $("#close_session").hide();
+                } else {
+                    $("#login_user").hide();
+                    $("#registro_usuario").hide();
+                    $("#agregar_nuevo_evento").show();
+                    $("#close_session").show();
+                }
+            });
+        }) ();
+
+        function logout() {
+            $.getJSON( "{% url 'freedcamp:logout' %}" ).done(function( data ) {
+                if (data.message == "ok") {
+                        window.location = "{% url 'freedcamp:index' %}";
+            } else {
+                        alert("Se presentó un error al salir");
+                    }
+                });
+            }
+
+    </script>
+
+</head>
+
+    <div class="container">
+        <a href="{% url 'freedcamp:loginUser' %}" id="login_user">Login</a></br>
+        <a href="{% url 'freedcamp:registroUsuario' %}" id="registro_usuario">Registrarse</a>
+        <a href="#" id="close_session" onclick="logout();">Logout</a>
+        <div class="row">
+            <div class="col-sm-8" style="background-color:lavender;"><h2>Empresas</h2></div>
+        </div>
+        <div class="row" id="empresas">
+            <ul class="list-group"  style="width: 780px">
+                {% for i in empresas%}
+                    <li class="list-group-item"><a href="{% url 'freedcamp:listarServicios' pk=i.id %}">{{i.nombre}}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+
+    </div>
+</body>
+</html>
