@@ -77,9 +77,9 @@ WSGI_APPLICATION = 'pruebaKAPTA.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'KAPTA',
-        'USER': 'postgres',
-        'PASSWORD': 'postgres',
+        'NAME': os.environ["DBNAME"],
+        'USER': os.environ["DBUSER"],
+        'PASSWORD': os.environ["DBPASSWORD"],
         'HOST': 'localhost',
         'PORT':'',
     }
@@ -124,4 +124,4 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-API_KEY='c6d4c40495f09314332ed4b175c7b50460ca0a3a'
+API_KEY=os.environ["API_KEY_FREEDCAMP"]
