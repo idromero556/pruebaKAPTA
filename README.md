@@ -1,4 +1,7 @@
-# pruebaKAPTA
+# Modelo base de datos
+![alt text](https://www.lucidchart.com/publicSegments/view/b0631609-07d1-4683-bf98-26d020160ca6/image.png)
+
+# pruebaKAPTA instrucciones
 
 Se utilizó python versión 3.6.8.
 
@@ -17,6 +20,5 @@ y el link de las tareas(para cada id de proyecto): localhost/freedcamp/verListas
 Luego ingresar a para navegar la aplicación: localhost/freedcamp/
 
 
-#Modelo base de datos
-![alt text](https://www.lucidchart.com/publicSegments/view/b0631609-07d1-4683-bf98-26d020160ca6/image.png)
+
 
